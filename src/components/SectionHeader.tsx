@@ -1,35 +1,35 @@
 import { cn } from "@/lib/utils";
 
-interface SectionHeaderProps {
+type SectionHeaderProps = {
   eyebrow?: string;
   title: string;
   description?: string;
-  align?: "left" | "center";
   className?: string;
-}
+};
 
 export default function SectionHeader({
   eyebrow,
   title,
   description,
-  align = "center",
-  className,
+  className = "",
 }: SectionHeaderProps) {
   return (
-    <div
-      className={cn(
-        "max-w-2xl",
-        align === "center" ? "mx-auto text-center" : "text-left",
-        className
-      )}
-    >
-      {eyebrow && <span className="stamp bg-sunshine">{eyebrow}</span>}
-      <h2 className="mt-4 font-display text-3xl leading-tight text-ink sm:text-4xl md:text-5xl">
+    <div className={cn("mx-auto max-w-4xl text-center text-ink", className)}>
+      {eyebrow ? (
+        <p className="mx-auto mb-5 inline-flex w-fit rotate-[-2deg] rounded-full comic-border bg-sunshine px-5 py-2 font-utility text-xs font-black uppercase tracking-[0.22em] text-ink shadow-pop-sm">
+          {eyebrow}
+        </p>
+      ) : null}
+
+      <h2 className="font-display text-4xl leading-tight text-ink sm:text-5xl md:text-6xl">
         {title}
       </h2>
-      {description && (
-        <p className="mt-4 text-base text-ink/70 sm:text-lg">{description}</p>
-      )}
+
+      {description ? (
+        <p className="mx-auto mt-5 max-w-2xl text-base font-medium leading-7 text-ink/70 sm:text-lg">
+          {description}
+        </p>
+      ) : null}
     </div>
   );
 }
