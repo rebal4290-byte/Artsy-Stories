@@ -13,7 +13,7 @@ export default function PortfolioCard({ item, index = 0 }: { item: PortfolioItem
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.35, delay: (index % 9) * 0.04 }}
       whileHover={{ rotate: index % 2 === 0 ? -0.6 : 0.6 }}
-      className="group relative overflow-hidden rounded-3xl comic-border bg-white shadow-pop-sm"
+      className="group relative overflow-hidden rounded-3xl comic-border bg-ink shadow-pop-sm"
     >
       <div
         className="relative flex h-52 items-center justify-center overflow-hidden"
@@ -25,7 +25,7 @@ export default function PortfolioCard({ item, index = 0 }: { item: PortfolioItem
         }}
       >
         <div className="halftone absolute inset-0 text-white" aria-hidden />
-        <span className="relative grid h-20 w-20 place-items-center rounded-full comic-border bg-white/90 shadow-pop-sm">
+        <span className="relative grid h-20 w-20 place-items-center rounded-full comic-border bg-ink shadow-pop-sm">
           <Icon name={item.icon} className="h-9 w-9 text-ink" />
         </span>
 
