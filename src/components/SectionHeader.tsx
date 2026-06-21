@@ -24,10 +24,7 @@ export default function SectionHeader({
       )}
     >
       {eyebrow && (
-        <span
-          className="stamp bg-sunshine !text-ink"
-          style={{ color: "#14111f" }}
-        >
+        <span className="inline-flex rotate-[-2deg] rounded-full border-4 border-ink bg-sunshine px-5 py-2 font-utility text-xs font-black uppercase tracking-[0.22em] text-[#14111f] shadow-[4px_4px_0_#14111f]">
           {eyebrow}
         </span>
       )}
