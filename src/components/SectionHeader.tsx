@@ -18,17 +18,28 @@ export default function SectionHeader({
   return (
     <div
       className={cn(
-        "max-w-2xl",
+        "max-w-2xl text-ink",
         align === "center" ? "mx-auto text-center" : "text-left",
         className
       )}
     >
-      {eyebrow && <span className="stamp bg-sunshine">{eyebrow}</span>}
+      {eyebrow && (
+        <span
+          className="stamp bg-sunshine !text-ink"
+          style={{ color: "#14111f" }}
+        >
+          {eyebrow}
+        </span>
+      )}
+
       <h2 className="mt-4 font-display text-3xl leading-tight text-ink sm:text-4xl md:text-5xl">
         {title}
       </h2>
+
       {description && (
-        <p className="mt-4 text-base text-ink/70 sm:text-lg">{description}</p>
+        <p className="mt-4 text-base text-ink/70 sm:text-lg">
+          {description}
+        </p>
       )}
     </div>
   );
